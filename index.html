@@ -52,11 +52,21 @@
     border: 24px solid transparent; border-image: url("assets/ui_panel.png") 8 fill / 24px stretch;
     padding: 36px 6px 8px; image-rendering: pixelated;
   }
+  .sections section { break-inside: avoid; }
   .panel p, .panel li { margin: 10px 0; }
   .when { text-align: center; font-size: 14px; opacity: .8; margin-top: 0; }
   h2 { font-size: 19px; font-weight: normal; margin: 28px 0 4px; color: var(--ribbon-shadow); }
   .lead { font-size: 17px; }
   .email { background: #f4e2b8; padding: 2px 6px; }
+  @media (min-width: 900px) {
+    body { font-size: 16px; }
+    main { max-width: 1000px; }
+    .ribbon { max-width: 600px; }
+    .panel { padding-left: 14px; padding-right: 14px; }
+    .lead { text-align: center; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .sections { columns: 2; column-gap: 48px; }
+    .sections section:first-child h2 { margin-top: 12px; }
+  }
   footer { text-align: center; margin-top: 24px; font-size: 14px; color: var(--ink); }
   @media (prefers-reduced-motion: reduce) { .cloud, .hero { animation: none; } .c1 { left: 8%; } .c2 { left: 70%; } .c3 { left: 40%; } .c4 { left: 15%; } .c5 { left: 60%; } .c6 { left: 80%; } .c7 { left: 25%; } .c8 { left: 65%; } .c9 { left: 10%; } }
 </style>
@@ -70,26 +80,36 @@
     <p class="when">Sky Hopper &middot; Effective 17 October 2026</p>
     <p class="lead">Sky Hopper is an iPhone game. This page explains what it does with your information. The short version: it collects none.</p>
 
+    <div class="sections">
+    <section>
     <h2>What we collect</h2>
     <p>Nothing. Sky Hopper has no accounts, no sign-in, no ads, no analytics and no tracking. It does not send any information about you or your device to us or to anyone else.</p>
-
+    </section>
+    <section>
     <h2>What stays on your phone</h2>
     <p>To remember your progress, the game saves a few things on your device only: your best score, your coins, the upgrades and skins you own, the skin you wear, which first-run hints you have seen, and a record of purchases already given to you. This stays on your phone. We cannot see it, and deleting the app removes it.</p>
-
+    </section>
+    <section>
     <h2>Purchases</h2>
     <p>Coin packs and some skins are sold as in-app purchases through Apple. Apple takes the payment and handles your payment details under its own privacy policy. We never see your card or Apple Account details. The game only receives a confirmation from Apple that a purchase happened, so it can give you what you bought. Restore Purchases, in Settings, asks Apple to confirm what you own so the game can give back skins you bought on another phone.</p>
-
+    </section>
+    <section>
     <h2>Third parties</h2>
     <p>The game does not use any third-party services, software development kits for analytics or advertising, or social media.</p>
-
+    </section>
+    <section>
     <h2>Children</h2>
     <p>Because the game collects no personal information from anyone, there is nothing to collect from children either. Purchases follow the settings of the Apple Account, so parents can use Apple's Family Sharing and Ask to Buy controls.</p>
-
+    </section>
+    <section>
     <h2>Changes</h2>
     <p>If this ever changes, for example if a leaderboard or sign-in is added, this page will be updated before that version is released, and the date above will change.</p>
-
+    </section>
+    <section>
     <h2>Contact</h2>
     <p>Questions about this policy: <span class="email">[contact email to be added]</span></p>
+    </section>
+    </div>
   </div>
   <footer>Art and font by Kenney (CC0)</footer>
 </main>
