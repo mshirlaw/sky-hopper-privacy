@@ -16,16 +16,30 @@
     color: var(--ink); font: 15px/1.7 "Kenney Mini Square", ui-monospace, monospace;
     image-rendering: pixelated;
   }
-  .cloud { position: absolute; width: 180px; aspect-ratio: 20 / 6; background: url("assets/cloud.svg") center / 100% 100% no-repeat; opacity: .9; animation: drift 90s linear infinite; }
-  .cloud.a { top: 70px; left: -200px; }
-  .cloud.b { top: 330px; width: 240px; left: -260px; animation-duration: 140s; animation-delay: -60s; }
-  .cloud.c { top: 620px; width: 150px; left: -170px; animation-duration: 110s; animation-delay: -30s; }
-  @keyframes drift { to { transform: translateX(calc(100vw + 300px)); } }
+  .cloud { position: absolute; width: 180px; aspect-ratio: 20 / 6; background: url("assets/cloud.svg") center / 100% 100% no-repeat; opacity: .92; left: -300px; animation: drift 100s linear infinite; }
+  .c1 { top: 70px;   width: 180px; animation-duration: 90s;  animation-delay: -20s; }
+  .c2 { top: 210px;  width: 120px; animation-duration: 70s;  animation-delay: -55s; }
+  .c3 { top: 340px;  width: 260px; animation-duration: 140s; animation-delay: -90s; }
+  .c4 { top: 520px;  width: 150px; animation-duration: 110s; animation-delay: -30s; }
+  .c5 { top: 700px;  width: 210px; animation-duration: 120s; animation-delay: -75s; }
+  .c6 { top: 880px;  width: 130px; animation-duration: 80s;  animation-delay: -10s; }
+  .c7 { top: 1060px; width: 240px; animation-duration: 150s; animation-delay: -110s; }
+  .c8 { top: 1250px; width: 160px; animation-duration: 95s;  animation-delay: -45s; }
+  .c9 { top: 1450px; width: 200px; animation-duration: 130s; animation-delay: -65s; }
+  @keyframes drift { to { transform: translateX(calc(100vw + 600px)); } }
 
   main { position: relative; max-width: 620px; margin: 0 auto; padding: 36px 16px 56px; }
 
-  .hero { display: block; width: 144px; height: 144px; margin: 0 auto 8px; image-rendering: pixelated; animation: hop 1.2s steps(6) infinite alternate; }
-  @keyframes hop { from { transform: translateY(0); } to { transform: translateY(-18px); } }
+  .stage { position: relative; width: 168px; height: 196px; margin: 0 auto 4px; }
+  .plank { position: absolute; left: 0; bottom: 0; width: 168px; height: 42px; background: url("assets/plank.svg") center / 100% 100% no-repeat; }
+  .hero { position: absolute; left: 12px; bottom: 36px; width: 144px; height: 144px; background: url("assets/pp_player_0.png") center / 100% 100% no-repeat; animation: hop .9s infinite; }
+  @keyframes hop {
+    0%   { transform: translateY(0);     background-image: url("assets/pp_player_0.png"); animation-timing-function: ease-out; }
+    8%   { background-image: url("assets/pp_player_1.png"); }
+    50%  { transform: translateY(-48px); background-image: url("assets/pp_player_1.png"); animation-timing-function: ease-in; }
+    92%  { background-image: url("assets/pp_player_1.png"); }
+    100% { transform: translateY(0);     background-image: url("assets/pp_player_0.png"); }
+  }
 
   .ribbon { display: flex; height: 72px; margin: 0 auto -36px; position: relative; z-index: 2; max-width: 520px; image-rendering: pixelated; }
   .ribbon i { flex: 0 0 72px; background-size: 72px 72px; background-repeat: no-repeat; }
@@ -43,14 +57,14 @@
   h2 { font-size: 19px; font-weight: normal; margin: 28px 0 4px; color: var(--ribbon-shadow); }
   .lead { font-size: 17px; }
   .email { background: #f4e2b8; padding: 2px 6px; }
-  footer { text-align: center; margin-top: 20px; font-size: 14px; color: #fff; text-shadow: 0 2px 0 rgba(44, 70, 110, .5); }
-  @media (prefers-reduced-motion: reduce) { .cloud, .hero { animation: none; } .cloud.a { left: 8%; } .cloud.b { left: 55%; } .cloud.c { left: 20%; } }
+  footer { text-align: center; margin-top: 24px; font-size: 14px; color: var(--ink); }
+  @media (prefers-reduced-motion: reduce) { .cloud, .hero { animation: none; } .c1 { left: 8%; } .c2 { left: 70%; } .c3 { left: 40%; } .c4 { left: 15%; } .c5 { left: 60%; } .c6 { left: 80%; } .c7 { left: 25%; } .c8 { left: 65%; } .c9 { left: 10%; } }
 </style>
 </head>
 <body>
-<div class="cloud a"></div><div class="cloud b"></div><div class="cloud c"></div>
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div><div class="cloud c5"></div><div class="cloud c6"></div><div class="cloud c7"></div><div class="cloud c8"></div><div class="cloud c9"></div>
 <main>
-  <img class="hero" src="assets/pp_player_0.png" alt="The Sky Hopper astronaut">
+  <div class="stage" role="img" aria-label="The Sky Hopper astronaut hopping on a plank"><div class="hero"></div><div class="plank"></div></div>
   <div class="ribbon"><i class="l"></i><div class="m"><h1>PRIVACY POLICY</h1></div><i class="r"></i></div>
   <div class="panel">
     <p class="when">Sky Hopper &middot; Effective 17 October 2026</p>
