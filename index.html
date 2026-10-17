@@ -9,13 +9,14 @@
   @font-face { font-family: "Kenney Mini Square"; src: url("assets/KenneyMiniSquare.ttf"); }
   :root { --ink: #5c3314; --ribbon-shadow: #8c2e29; --sky-top: #8cccfa; --sky-bottom: #d4e9ff; }
   * { box-sizing: border-box; }
-  html { background: var(--sky-bottom); }
+  html { background: var(--sky-bottom); overflow-x: hidden; }
   body {
-    margin: 0; min-height: 100vh; position: relative; overflow-x: hidden;
+    margin: 0; min-height: 100vh; position: relative; overflow-x: hidden; width: 100%;
     background: linear-gradient(var(--sky-top), var(--sky-bottom)) fixed;
     color: var(--ink); font: 15px/1.7 "Kenney Mini Square", ui-monospace, monospace;
     image-rendering: pixelated;
   }
+  .sky { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
   .cloud { position: absolute; width: 180px; aspect-ratio: 20 / 6; background: url("assets/cloud.svg") center / 100% 100% no-repeat; opacity: .92; left: -300px; animation: drift 100s linear infinite; }
   .c1 { top: 70px;   width: 180px; animation-duration: 90s;  animation-delay: -20s; }
   .c2 { top: 210px;  width: 120px; animation-duration: 70s;  animation-delay: -55s; }
@@ -72,7 +73,7 @@
 </style>
 </head>
 <body>
-<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div><div class="cloud c5"></div><div class="cloud c6"></div><div class="cloud c7"></div><div class="cloud c8"></div><div class="cloud c9"></div>
+<div class="sky"><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div><div class="cloud c5"></div><div class="cloud c6"></div><div class="cloud c7"></div><div class="cloud c8"></div><div class="cloud c9"></div></div>
 <main>
   <div class="stage" role="img" aria-label="The Sky Hopper astronaut hopping on a plank"><div class="hero"></div><div class="plank"></div></div>
   <div class="ribbon"><i class="l"></i><div class="m"><h1>PRIVACY POLICY</h1></div><i class="r"></i></div>
